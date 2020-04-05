@@ -8,16 +8,22 @@ namespace CoreWebAPI.Services
 {
     public class EmployeeService : IEmployeeService
     {
-        private Dictionary<int, EmployeeModel> employeeData;
+        //private Dictionary<int, EmployeeModel> employeeData;
+        private List< EmployeeModel> employeeData;
         public EmployeeService()
         {
-            employeeData = new Dictionary<int, EmployeeModel>();
+            employeeData = new List<EmployeeModel>();
         }
         public EmployeeModel AddEmployee(EmployeeModel employee)
         {
-            employeeData.Add(employee.EmpId, employee);
+            employeeData.Add(employee);
 
             return employee;
+        }
+
+        public List<EmployeeModel> GetAllEmployee()
+        {
+            return employeeData;
         }
     }
 }

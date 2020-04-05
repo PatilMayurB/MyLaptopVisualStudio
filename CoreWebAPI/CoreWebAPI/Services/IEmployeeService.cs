@@ -9,5 +9,6 @@ namespace CoreWebAPI.Services
     public interface IEmployeeService
     {
         EmployeeModel AddEmployee(EmployeeModel employee);
+        List<EmployeeModel> GetAllEmployee();
     }
 }

@@ -29,8 +29,19 @@ namespace CoreWebAPI.Controller
             {
                 return NotFound();
             }
-
             return addedEmployee;
+        }
+        [HttpGet]
+        [Route("GetAllEmployee")]
+        public ActionResult<List<EmployeeModel>> getEmployee()
+        {
+            var allEmployees = service.GetAllEmployee();
+
+            if (allEmployees == null)
+            {
+                return NotFound();
+            }
+            return allEmployees;
         }
     }
 }

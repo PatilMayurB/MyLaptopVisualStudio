@@ -18,8 +18,11 @@ namespace CoreWebAPI.Services
         {
             context.Employees.Add(employee);
             context.SaveChanges();
-
             return employee;
+        }
+        public List<EmployeeModel> GetAllEmployee()
+        {
+            return context.Employees.ToList();
         }
     }
 }
