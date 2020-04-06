@@ -11,8 +11,11 @@ namespace CoreWebAPI.Models
     {
         [Key]
         //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int EmpId { get; set; }
+        public int EmpId { get; set; } 
         public string EmpName { get; set; }
         public string Department { get; set; }
+        public int Age { get; set; } // = 1;
+        public string UserName { get; set; } // = "default";
+        public string Password { get; set; } // = "default";
     }
 }

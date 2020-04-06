@@ -10,5 +10,8 @@ namespace CoreWebAPI.Services
     {
         EmployeeModel AddEmployee(EmployeeModel employee);
         List<EmployeeModel> GetAllEmployee();
+        EmployeeModel GetEmployee(int id);
+        EmployeeModel GetLogin(EmployeeModel employee);
+        EmployeeModel DeleteEmployee(EmployeeModel employee);
     }
 }

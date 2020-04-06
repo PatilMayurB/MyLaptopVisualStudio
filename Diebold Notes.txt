@@ -45,3 +45,16 @@ varchar vs nvarchar
 
 https://youtu.be/AHqIrJ_PlPY?t=1286
 
+=========================================================================
+
+Login Page:
+https://localhost:44365/
+
+API:
+http://localhost:52043/
+
+=========================================================================
+
+Try-Catch
+Code Comment
+XUnit

@@ -25,5 +25,16 @@ namespace CoreWebAPI.Services
         {
             return employeeData;
         }
+
+        //NOT IMPLEMENTED AS UNNECESSARY
+        public EmployeeModel GetEmployee(int i)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EmployeeModel GetLogin(EmployeeModel employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

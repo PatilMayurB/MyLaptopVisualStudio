@@ -19,6 +19,7 @@ namespace CoreWebAPI.Controller
         {
             this.service = service;
         }
+        //**** Adding an Employee ****
         [HttpPost]
         [Route("AddEmployee")]
         public ActionResult<EmployeeModel> addEmployee(EmployeeModel employee)
@@ -31,9 +32,11 @@ namespace CoreWebAPI.Controller
             }
             return addedEmployee;
         }
+
+        //****Gettling all employee details****
         [HttpGet]
         [Route("GetAllEmployee")]
-        public ActionResult<List<EmployeeModel>> getEmployee()
+        public ActionResult<List<EmployeeModel>> getAllEmployee()
         {
             var allEmployees = service.GetAllEmployee();
 
@@ -42,6 +45,27 @@ namespace CoreWebAPI.Controller
                 return NotFound();
             }
             return allEmployees;
+        }
+        //****Getting details of one Employee****
+        [HttpGet]
+        [Route("GetEmployee/{id}")]
+        public EmployeeModel GetEmployee(int id)
+        {
+            var employee = service.GetEmployee(id);
+            return employee;
+        }
+        //****Login Route, checks Username and Password****
+        [HttpPost]
+        [Route("GetLogin")]
+        public ActionResult<EmployeeModel> getLogin(EmployeeModel employee)
+        {
+            var foundEmployee = service.GetLogin(employee);
+
+            if (foundEmployee == null)
+            {
+                return NotFound();
+            }
+            return foundEmployee;
         }
     }
 }

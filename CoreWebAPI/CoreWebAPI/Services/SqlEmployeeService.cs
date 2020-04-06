@@ -24,5 +24,28 @@ namespace CoreWebAPI.Services
         {
             return context.Employees.ToList();
         }
+
+        public EmployeeModel GetEmployee(int id)
+        {
+            var employee = context.Employees.Where(a => a.EmpId == id).SingleOrDefault();
+            return employee;
+        }
+
+        public EmployeeModel GetLogin(EmployeeModel employee)
+        {
+            try
+            {
+                var employeeFound = context.Employees.Where(a => a.UserName == employee.UserName && a.Password == employee.Password).SingleOrDefault();
+                //if (employeeFound.UserName == employee.UserName && employeeFound.Password == employee.Password)
+                if (employeeFound != null)
+                {
+                    return employee;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+                return null;
+        }
     }
 }
