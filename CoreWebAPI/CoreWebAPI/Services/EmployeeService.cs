@@ -21,6 +21,11 @@ namespace CoreWebAPI.Services
             return employee;
         }
 
+        public int DeleteEmployee(int employee)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<EmployeeModel> GetAllEmployee()
         {
             return employeeData;
@@ -33,6 +38,11 @@ namespace CoreWebAPI.Services
         }
 
         public EmployeeModel GetLogin(EmployeeModel employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateEmployee(EmployeeModel employee)
         {
             throw new NotImplementedException();
         }

@@ -67,5 +67,29 @@ namespace CoreWebAPI.Controller
             }
             return foundEmployee;
         }
+        [HttpDelete]
+        [Route("DeleteEmployee/{id}")]
+        public int deleteEmployee(int id)
+        {
+            var deletedEmployee = service.DeleteEmployee(id);
+            if (deletedEmployee == 1)
+            {
+                return 1;
+            }
+            return 0;
+        }
+        [HttpPut]
+        [Route("UpdateEmployee")]
+        public bool updateEmployee(EmployeeModel employee)
+        {
+            var updatedEmployee = service.UpdateEmployee(employee);
+            if (updatedEmployee == true)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
     }
 }

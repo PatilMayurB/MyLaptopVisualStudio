@@ -12,6 +12,7 @@ namespace CoreWebAPI.Services
         List<EmployeeModel> GetAllEmployee();
         EmployeeModel GetEmployee(int id);
         EmployeeModel GetLogin(EmployeeModel employee);
-        EmployeeModel DeleteEmployee(EmployeeModel employee);
+        int DeleteEmployee(int id);
+        bool UpdateEmployee(EmployeeModel employee);
     }
 }

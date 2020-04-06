@@ -20,6 +20,22 @@ namespace CoreWebAPI.Services
             context.SaveChanges();
             return employee;
         }
+
+        public int DeleteEmployee(int id)
+        {
+            try
+            {
+                var employeeFound = context.Employees.Find(id);
+                context.Employees.Remove(employeeFound);
+                context.SaveChanges();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+            }
+            return 0;
+        }
+
         public List<EmployeeModel> GetAllEmployee()
         {
             return context.Employees.ToList();
@@ -46,6 +62,20 @@ namespace CoreWebAPI.Services
             {
             }
                 return null;
+        }
+
+        public bool UpdateEmployee(EmployeeModel employee)
+        {
+            try
+            {
+                var updatedEmployee = context.Employees.Update(employee);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            { 
+            }
+            return false;
         }
     }
 }
