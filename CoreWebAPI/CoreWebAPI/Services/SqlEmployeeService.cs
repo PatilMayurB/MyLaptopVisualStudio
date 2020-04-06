@@ -68,7 +68,7 @@ namespace CoreWebAPI.Services
         {
             try
             {
-                var updatedEmployee = context.Employees.Update(employee);
+                context.Employees.Update(employee);
                 context.SaveChanges();
                 return true;
             }
