@@ -1,3 +1,9 @@
+========================================================================
+
+Virtual Machine Graphics Setup Command:
+> cd C:\Program Files\Oracle\VirtualBox
+> VBoxManage.exe setextradata TP_65_TPAdmin CustomVideoMode1 1366x768x32
+
 .Net Core Web API
 
 Reading appsetting.json:
@@ -11,14 +17,14 @@ var config = new ConfigurationBuilder()
 var config = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json", optional: false)
         .Build();
-=======================================================================
+=========================================================================
     WebProtocolSettings settings_Web = new WebProtocolSettings();
     config.GetSection("WebProtocolSettings").Bind(settings_Web);
 var builder = new ConfigurationBuilder().AddEnvironmentVariables()
                      .SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory)
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 Configuration = builder.Build();
-========================================================================
+=========================================================================
 private IConfiguration _config;
    
         public Startup(IConfiguration config)
@@ -36,7 +42,7 @@ Add Singleton and Transient / Dependency Injection
 Hosting API as a service
 
 Dependency Injection
-========================================================================
+=========================================================================
 API Front End Notes:
 
 https://youtu.be/AHqIrJ_PlPY?t=779
@@ -58,6 +64,13 @@ http://localhost:52043/
 Try-Catch
 Code Comment
 XUnit
+
+=========================================================================
+
+https://tom.wincor-nixdorf.com/scm/namosdce/dcewebapi.git
+
+=========================================================================
+https://sapp24ap1.wincor-nixdorf.com:50101/irj/portal
 
 
 

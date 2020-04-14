@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    
+    <!-- App file must be included before controller file -->
+    <script src="app.js" type="text/javascript"></script>
+    <script src="maincontroller.js" type="text/javascript"></script>
+</head>
+<body ng-app= 'MyTutorialApp' >
+
+    <!-- SCOPE , BINDINGS , DIRECTIVES , FILTER , EVENTS -->
+
+    Simple text declared with scope, binding
+    <!-- ng-app helps us declare this page as an AngularJS Application -->
+    <!-- ng-app is telling this div that it's an angular application -->
+    <div id='content' ng-controller='MainController'>
+        <!-- {{ }} to make the html identiify scope variables -->
+        <!-- {{ }} is called as binding expression -->
+        {{ message }}
+    </div>
+    <br>
+    Display as you type
+    <br>
+    <div ng-controller='MainController'>
+        <!-- ng-model binds it to scope  variable, which we are using here itself -->
+        <input type ="text" ng-model = 'inputValue'>
+        {{inputValue}}        
+
+    </div>
+    <br>
+    Passing selected option to other tag
+    <br>
+    <div ng-controller= 'MainController'>
+        <!-- ng-options is like foreach() to fill a dropdown. It requires an array -->
+        <!-- ng-options works ONLY for Dropdowns -->
+        <select ng-model='selectedPerson' ng-options='item.name for item in people'></select>
+        <select ng-model='selectedGenre'>
+
+            <!-- ng-repeat can be used on other elements as well and not just dropdown -->
+            <!-- selectedPerson.id is same as array index of objects -->
+            <option ng-repeat = 'label in people[selectedPerson.id].music[0]'>
+                {{label}}
+            </option>
+        </select>
+    </div>
+    <br>
+    Filtering the data, type to filter
+    <br>
+    <div ng-controller = 'MainController'>
+        <input type="text" ng-model = 'searchText.id'>
+        <ul>
+            <!-- only 'searchText' would accept any paramater in the object -->
+            <!-- 'searchText.id' looks specifically in that paramater in the object -->
+            <li ng-repeat = 'item in people | filter: searchText' > {{ item.name }} </li> 
+        </ul>
+    </div>
+    <br>
+    Using ng-show and ng-hide
+    <br>
+    <div ng-controller = 'MainController'>
+        <input type="text" ng-model = 'searchString'>
+        <ul>
+            <li ng-repeat = 'item in people | filter: searchString' ng-show='item.live == true' > {{ item.name }} </li> 
+        </ul>
+        <ul>
+            <li ng-repeat = 'item in people | filter: searchString' ng-hide='item.live == false' > {{ item.name }} </li> 
+        </ul>
+    </div>
+    <br>
+    Events in AngularJS
+    <br>
+
+    <div ng-controller = 'MainController'>
+        <input type="text" ng-model = 'addPerson'>
+
+        <!-- Here we are calling variable which has a function assigned to it -->
+        <button ng-click = 'addNew()'> Add Person </button>
+
+        <ul>
+            <li ng-repeat = 'item in people'>
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
