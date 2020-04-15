@@ -1,4 +1,5 @@
 //Assigning a controller to the app
+//Contoller builds a model for a view to display
 
 //Here we are adding a $scope variable as parameter to the controller function
     //here we will assign all our controller variables which will 
@@ -10,7 +11,6 @@ app.controller("MainController", function($scope){
 
     //Assigning controller variables to $scope to access in HTML
     //To print the string in HTML page
-    $scope.message  = "Message from angular controller";
 
     //Scope variable that ACTS AS A MODEL
     $scope.inputText = "";
@@ -24,12 +24,15 @@ app.controller("MainController", function($scope){
     $scope.selectedGenre = null;
 
     //To hold array of objects
-    $scope.people = [
+    var people = [
         { id: 0, name: 'Leon', music: [ 'Rock', 'Metal', 'Dubstep', 'Electro' ], live: true },
         { id: 1, name: 'Chris', music: [ 'Indie', 'Drumstep', 'Dubstep', 'Electro' ], live: true },
         { id: 2, name: 'Harry', music: [ 'Rock', 'Metal', 'Thrash Metal', 'Heavy Metal' ], live: false },
         { id: 3, name: 'Allyce', music: [ 'Pop', 'RnB', 'Hip Hop' ], live: true }
       ];
+
+
+    $scope.people = people;
 
       $scope.addPerson = null;
 
@@ -40,4 +43,10 @@ app.controller("MainController", function($scope){
               $scope.people.push({ id : $scope.people.length, name : $scope.addPerson , music : [] , live : true})
           }
       }
+});
+app.controller("MyController", function($scope){
+
+    //Assigning controller variables to $scope to access in HTML
+    //To print the string in HTML page
+    $scope.message  = "Message from angular controller";
 });

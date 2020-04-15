@@ -18,13 +18,13 @@
     Simple text declared with scope, binding
     <!-- ng-app helps us declare this page as an AngularJS Application -->
     <!-- ng-app is telling this div that it's an angular application -->
-    <div id='content' ng-controller='MainController'>
-        <!-- {{ }} to make the html identiify scope variables -->
+    <div id='content' ng-controller='MyController'>
+        <!-- {{ }} to make the html identify scope variables -->
         <!-- {{ }} is called as binding expression -->
         {{ message }}
     </div>
     <br>
-    Display as you type
+    TWO-WAY DATA BINDING
     <br>
     <div ng-controller='MainController'>
         <!-- ng-model binds it to scope  variable, which we are using here itself -->
@@ -52,7 +52,7 @@
     Filtering the data, type to filter
     <br>
     <div ng-controller = 'MainController'>
-        <input type="text" ng-model = 'searchText.id'>
+        <input type="text" ng-model = 'searchText.name'>
         <ul>
             <!-- only 'searchText' would accept any paramater in the object -->
             <!-- 'searchText.id' looks specifically in that paramater in the object -->
