@@ -56,8 +56,38 @@
             </tbody>
         </table>
     </div>
-
+    <br />
+    Sorting in AngularJS
+    <br />
     <!-- Filter does three things | Format, Sort and Filter -->
     <!-- Filters for formatting data, cases, number, currency ,date -->
+    <div ng-controller="mainController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Music</th>
+                    <th>Live</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sorting {{expression | orderBy : FilterColumn : true for ascending/ false for descending (Default is false anyways)}} -->
+                <!--<tr ng-repeat="item in people | orderBy : 'name' : true">-->
+                <tr ng-repeat="item in people | orderBy : '-name'">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td ng-repeat=" music in item.music">
+                        {{music}}
+                    </td>
+                    <td>{{item.live}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
 </body>
 </html>

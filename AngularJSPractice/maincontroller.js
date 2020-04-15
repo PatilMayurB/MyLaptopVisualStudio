@@ -31,6 +31,7 @@ app.controller("MainController", function($scope){
         { id: 3, name: 'Allyce', music: [ 'Pop', 'RnB', 'Hip Hop' ], live: true }
       ];
 
+    $scope.limit = 3;
 
     $scope.people = people;
 
