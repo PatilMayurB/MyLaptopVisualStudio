@@ -34,7 +34,7 @@ namespace CoreWebAPI
             services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             //services.AddSingleton<IEmployeeService, EmployeeService>();
-            services.AddSingleton<IEmployeeService, SqlEmployeeService>();
+            services.AddScoped<IEmployeeService, SqlEmployeeService>();
         }
 
         // Called at runtime. Configures HTTP request pipeline.
