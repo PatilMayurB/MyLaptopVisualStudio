@@ -28,6 +28,8 @@ namespace CoreWebAPI
         // Called at runtime. Used to add services.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(config.GetConnectionString("EmployeeDbConnection")));
 
             //***** MVC Pipeline & Compatibility Version(using Microsoft.AspNetCore.Mvc;) *****
@@ -51,7 +53,11 @@ namespace CoreWebAPI
             }
             //**** Redirects HTTP to HTTPS ****
             app.UseHttpsRedirection();
-
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
             //**** To use MVC, there's also UseMvcWithDefaultRoute
             app.UseMvc();
         }

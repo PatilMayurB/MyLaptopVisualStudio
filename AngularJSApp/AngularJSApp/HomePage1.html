@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="Script.js" type="text/javascript"></script>
+    <script src="Service.js" type="text/javascript"></script>
+    <script src="Controller.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body ng-app='myModule'>
+    <!--<div ng-controller='myController'>
+        {{10 + 20}}
+        {{message}}
+    </div>
+    <br />-->
+
+    <div ng-controller='myController'>
+        <ul>
+            <li ng-repeat="item in people">
+                {{item.name}} || Index : {{$index}} || {{$parent.$index}}  
+            </li>
+        </ul>
+    </div>
+    <br />
+
+    <div ng-controller='myController'>
+
+        <!-- If you open the inspect console, it gives an error as it is considering the {{}} as a path -->
+        <!--
+                <img src="{{imageSource}}" style="height: 100px ; width: 200px" alt="{{imageSource}}" />
+        -->
+        <!-- We solve that error by using 'ng-src' -->
+        <img ng-src="{{imageSource}}" style="height: 100px ; width: 200px" alt="{{imageSource}}" />
+    </div>
+    <br />
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in tech">
+                    <td>{{item.name}}</td>
+                    <td>{{item.likes}}</td>
+                    <td>{{item.dislikes}}</td>
+                    <td>
+                        <button ng-click="addLike($index)" >Like </button>
+                    </td>
+                    <td>
+                        <button ng-click="addDislike($index)">Dislike </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    Sorting in AngularJS
+    <br />
+    <!-- Filter does three things | Format, Sort and Filter -->
+    <!-- Filters for formatting data, cases, number, currency ,date -->
+    <div ng-controller="mainController">
+        <table class=" table">
+            <thead>
+                <tr>
+                    <th>EmpId</th>
+                    <th>EmpName</th>
+                    <th>Department</th>
+                    <th>Age</th>
+                    <th>Username</th>
+                    <th>Password</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sorting {{expression | orderBy : FilterColumn : true for ascending/ false for descending (Default is false anyways)}} -->
+                <!--<tr ng-repeat="item in people | orderBy : 'name' : true">-->
+                <tr ng-repeat="item in people">
+                    <td>{{item.empId}}</td>
+                    <td>{{item.empName}}</td>
+                    <td>{{item.department}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.password}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</body>
+</html>

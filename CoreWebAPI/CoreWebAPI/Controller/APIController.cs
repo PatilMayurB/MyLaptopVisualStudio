@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreWebAPI.Models;
 using CoreWebAPI.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +24,7 @@ namespace CoreWebAPI.Controller
         [HttpPost]
         [Route("AddEmployee")]
         public ActionResult<EmployeeModel> addEmployee(EmployeeModel employee)
-        {
+            {
             var addedEmployee = service.AddEmployee(employee);
 
             if (addedEmployee == null)

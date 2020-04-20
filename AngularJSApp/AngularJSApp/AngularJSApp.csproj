@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controller.js" />
+    <Content Include="HomePage1.html" />
     <Content Include="HomePage.html" />
     <Content Include="Images\Dragon.jpg" />
     <Content Include="Script.js" />
@@ -844,6 +845,7 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
+    <Content Include="Service.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
