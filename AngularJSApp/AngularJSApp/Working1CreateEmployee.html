@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="Script.js" type="text/javascript"></script>
+    <script src="Service.js" type="text/javascript"></script>
+    <script src="Controller.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body  ng-app='myModule'>
+    <div ng-controller="mainController">
+        <table class=" table-bordered">
+            <thead>
+                Table to add employee
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Employee Name</td>
+                    <td>
+                        <input type="text" ng-model="EmpName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>
+                        <input type="text" ng-model="Department" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="text" ng-model="Age" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>UserName</td>
+                    <td>
+                        <input type="text" ng-model="UserName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="text" ng-model="Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" ng-click="save()">
+                            Save Employee
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -68,7 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controller.js" />
-    <Content Include="HomePage1.html" />
+    <Content Include="Routing.js" />
+    <Content Include="Working1CreateEmployee.html" />
+    <Content Include="CreateEmployee.html" />
+    <Content Include="Working1HomePage.html" />
+    <Content Include="Test.html" />
+    <Content Include="Index.html" />
     <Content Include="HomePage.html" />
     <Content Include="Images\Dragon.jpg" />
     <Content Include="Script.js" />
