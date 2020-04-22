@@ -24,7 +24,7 @@
         var getRequest =  $http.get("http://localhost:5000/api/GetEmployee/" + empId);
         //var getRequest = $http({
         //    method: 'get',
-        //    url: "http://localhost:5000/api/GetEmployee/",
+        //    url: "",
         //    params: {EmpId : empId}
         //});
 

@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angular-ui-router.js" />
+    <Content Include="OldController.js" />
     <Content Include="Controller.js" />
+    <Content Include="SingleEmployee.html" />
     <Content Include="Routing.js" />
     <Content Include="Working1CreateEmployee.html" />
     <Content Include="CreateEmployee.html" />

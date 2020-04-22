@@ -12,5 +12,10 @@
         .when('/HomePage', {
             templateUrl: 'HomePage.html',
             controller: 'mainController'
-        });
+        })
+        .when('/SingleEmployee', {
+            templateUrl: 'SingleEmployee.html',
+            controller: 'mainController'
+        })
+        ;
 });
