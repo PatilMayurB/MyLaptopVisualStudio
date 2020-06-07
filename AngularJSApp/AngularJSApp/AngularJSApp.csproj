@@ -68,12 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="angular-ui-router.js" />
+    <Content Include="CreateEmployee.html" />
     <Content Include="OldController.js" />
     <Content Include="Controller.js" />
     <Content Include="SingleEmployee.html" />
     <Content Include="Routing.js" />
     <Content Include="Working1CreateEmployee.html" />
-    <Content Include="CreateEmployee.html" />
+    <Content Include="EditEmployee.html" />
     <Content Include="Working1HomePage.html" />
     <Content Include="Test.html" />
     <Content Include="Index.html" />

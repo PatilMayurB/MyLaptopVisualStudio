@@ -21,7 +21,25 @@
 
     //Get Single Employee
     this.getEmployee = function (empId) {
-        var getRequest =  $http.get("http://localhost:5000/api/GetEmployee/" + empId);
+        //var getRequest =  $http.get("http://localhost:5000/api/GetEmployee/" + empId);
+        var getRequest = $http({
+            method: 'get',
+            url: "http://localhost:5000/api/GetEmployee/" + empId,
+        });
+
+        return getRequest;
+    }
+    this.updateEmployee = function (employee) {
+        var postRequest = $http({
+            method: 'put',
+            url: "http://localhost:5000/api/UpdateEmployee",
+            data: employee
+        });
+        return postRequest;
+    }
+
+    this.deleteEmployee = function (empId) {
+        var getRequest = $http.delete("http://localhost:5000/api/DeleteEmployee/" + empId);
         //var getRequest = $http({
         //    method: 'get',
         //    url: "",
@@ -30,21 +48,4 @@
 
         return getRequest;
     }
-
 });
-
-//myApp.factory("myFactory", function () {
-//    var savedData = {}
-//    function set(data) {
-//        savedData = data;   
-//    }
-
-//    function get() {
-//        return savedData;
-//    }
-
-//    return {
-//        set: set,
-//        get : get
-//    }
-//});

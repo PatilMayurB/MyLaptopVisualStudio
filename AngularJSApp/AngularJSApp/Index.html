@@ -13,8 +13,10 @@
     <title>AJS Routing</title>
 </head>
 <body ng-app='myModule'>
-    <a href="#/HomePage">View All Employees</a>
-    <a href="#/CreateEmployee">CreateEmployee</a>
+    <button onclick="window.location.href = '#HomePage';">Home Page</button>
+    <button onclick="window.location.href = '#CreateEmployee';">Create Employee</button>
+    <!--<a href="#/HomePage">View All Employees</a>-->
+    <!--<a href="#/EditEmployee">EditEmployee</a>-->
     <div ng-view> </div>
 </body>
 </html>

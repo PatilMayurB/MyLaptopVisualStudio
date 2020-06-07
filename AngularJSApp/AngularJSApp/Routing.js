@@ -7,7 +7,7 @@
         //})
         .when('/CreateEmployee', {
             templateUrl: 'CreateEmployee.html',
-            controller: 'myController'
+            controller: 'mainController'
         })
         .when('/HomePage', {
             templateUrl: 'HomePage.html',
@@ -16,6 +16,10 @@
         .when('/SingleEmployee', {
             templateUrl: 'SingleEmployee.html',
             controller: 'mainController'
+        })
+        .when('/EditEmployee', {
+            templateUrl: 'EditEmployee.html',
+            controller: 'myController'
         })
         ;
 });
